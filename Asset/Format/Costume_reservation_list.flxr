@@ -1,0 +1,446 @@
+<?xml version="1.0"?>
+<Reports>
+  <FormatVersion>1.0 1.0.0.0</FormatVersion>
+  <Report ref="1">
+    <Name>Costume_reservation_list</Name>
+    <DataSourceName>Main</DataSourceName>
+    <OnOpen>' -- style script start
+_styleCtr = 0
+' -- style script end
+</OnOpen>
+    <ReportInfo>
+      <Author>T_hira1048</Author>
+    </ReportInfo>
+    <Layout>
+      <Width>9449</Width>
+      <Orientation>Portrait</Orientation>
+    </Layout>
+    <Font>
+      <Name>Segoe UI</Name>
+    </Font>
+    <DataSources>
+      <DataSource>
+        <Name>Main</Name>
+        <DataProvider>SqlServerCe4_0</DataProvider>
+        <ConnectionString>Data Source=Asset\ReportData.sdf</ConnectionString>
+        <RecordSource>Costume_reservation_list</RecordSource>
+        <RecordSourceType>TableDirect</RecordSourceType>
+      </DataSource>
+    </DataSources>
+    <Groups>
+      <Group>
+        <Name>予約年月日</Name>
+        <GroupBy>ReceiptDate</GroupBy>
+        <Sort>Ascending</Sort>
+        <KeepTogether>KeepFirstDetail</KeepTogether>
+        <OutlineLabel>
+          <Expression>ReceiptDate</Expression>
+        </OutlineLabel>
+      </Group>
+      <Group>
+        <Name>店舗名称</Name>
+        <GroupBy>StoreName</GroupBy>
+        <Sort>Ascending</Sort>
+        <KeepTogether>KeepFirstDetail</KeepTogether>
+        <OutlineLabel>
+          <Expression>StoreName</Expression>
+        </OutlineLabel>
+      </Group>
+    </Groups>
+    <Sections>
+      <Section>
+        <Name>Detail</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection>
+            <Height>1745</Height>
+          </SubSection>
+        </SubSections>
+        <Type>Detail</Type>
+        <OnPrint>' -- style script start
+detail.BackColor = iif(_styleCtr mod 2 = 0, rgb(255,255,255),rgb(240,240,240))
+_styleCtr = _styleCtr + 1
+' -- style script end
+</OnPrint>
+      </Section>
+      <Section>
+        <Name>Header</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>Header</Type>
+      </Section>
+      <Section>
+        <Name>Footer</Name>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>Footer</Type>
+      </Section>
+      <Section>
+        <Name>PageHeader</Name>
+        <Background type="Solid">
+          <Color>FFC2DCFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection>
+            <Background type="Solid">
+              <Color>FFFFFFFF</Color>
+            </Background>
+            <Height>345</Height>
+          </SubSection>
+        </SubSections>
+        <Type>PageHeader</Type>
+      </Section>
+      <Section>
+        <Name>PageFooter</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>PageFooter</Type>
+      </Section>
+      <Section>
+        <Name>GroupHeader0</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection>
+            <Height>1035</Height>
+          </SubSection>
+        </SubSections>
+        <Type>GroupHeader1</Type>
+        <Repeat>true</Repeat>
+      </Section>
+      <Section>
+        <Name>GroupFooter0</Name>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>GroupFooter1</Type>
+      </Section>
+      <Section>
+        <Name>GroupHeader1</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection>
+            <Height>1050</Height>
+          </SubSection>
+        </SubSections>
+        <Type>GroupHeader2</Type>
+        <Repeat>true</Repeat>
+      </Section>
+      <Section>
+        <Name>GroupFooter1</Name>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>GroupFooter2</Type>
+      </Section>
+    </Sections>
+    <Fields>
+      <TextField>
+        <Name>お客様名Lbl</Name>
+        <Section>GroupHeader2</Section>
+        <Left>6435</Left>
+        <Top>675</Top>
+        <Width>1983</Width>
+        <Height>350</Height>
+        <Align>LeftBottom</Align>
+        <WordWrap>false</WordWrap>
+        <Font>
+          <Name>Segoe UI</Name>
+          <Bold>true</Bold>
+        </Font>
+        <Text>
+          <Value sys="string">お客様名</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>衣裳コードLbl</Name>
+        <Section>GroupHeader2</Section>
+        <Left>0</Left>
+        <Top>675</Top>
+        <Width>1121</Width>
+        <Height>350</Height>
+        <Align>LeftBottom</Align>
+        <WordWrap>false</WordWrap>
+        <Font>
+          <Name>Segoe UI</Name>
+          <Bold>true</Bold>
+        </Font>
+        <Text>
+          <Value sys="string">衣裳コード</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>性別Lbl</Name>
+        <Section>GroupHeader2</Section>
+        <Left>8418</Left>
+        <Top>675</Top>
+        <Width>941</Width>
+        <Height>350</Height>
+        <Align>LeftBottom</Align>
+        <WordWrap>false</WordWrap>
+        <Font>
+          <Name>Segoe UI</Name>
+          <Bold>true</Bold>
+        </Font>
+        <Text>
+          <Value sys="string">性別</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>予約年月日時分Lbl</Name>
+        <Section>GroupHeader2</Section>
+        <Left>2242</Left>
+        <Top>675</Top>
+        <Width>1343</Width>
+        <Height>350</Height>
+        <Align>LeftBottom</Align>
+        <WordWrap>false</WordWrap>
+        <Font>
+          <Name>Segoe UI</Name>
+          <Bold>true</Bold>
+        </Font>
+        <Text>
+          <Value sys="string">予約年月日時分</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>施設名Lbl</Name>
+        <Section>GroupHeader2</Section>
+        <Left>1121</Left>
+        <Top>675</Top>
+        <Width>1121</Width>
+        <Height>350</Height>
+        <Align>LeftBottom</Align>
+        <WordWrap>false</WordWrap>
+        <Font>
+          <Name>Segoe UI</Name>
+          <Bold>true</Bold>
+        </Font>
+        <Text>
+          <Value sys="string">施設名</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>お客様名Ctl</Name>
+        <Section>Detail</Section>
+        <Left>6435</Left>
+        <Top>280</Top>
+        <Width>1983</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>Segoe UI</Name>
+        </Font>
+        <Text>
+          <Expression>CustomerName</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>お客様名カナ漢字Ctl</Name>
+        <Section>Detail</Section>
+        <Left>6435</Left>
+        <Top>0</Top>
+        <Width>1983</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>Segoe UI</Name>
+        </Font>
+        <Text>
+          <Expression>CostumerNamekana</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>衣裳コードCtl</Name>
+        <Section>Detail</Section>
+        <Left>0</Left>
+        <Top>0</Top>
+        <Width>1121</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>Segoe UI</Name>
+        </Font>
+        <Text>
+          <Expression>CostumeCode</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>性別Ctl</Name>
+        <Section>Detail</Section>
+        <Left>8418</Left>
+        <Top>0</Top>
+        <Width>941</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>Segoe UI</Name>
+        </Font>
+        <Text>
+          <Expression>Sex</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>備考Ctl</Name>
+        <Section>Detail</Section>
+        <Left>2242</Left>
+        <Top>560</Top>
+        <Width>7117</Width>
+        <Height>1110</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>Segoe UI</Name>
+        </Font>
+        <Text>
+          <Expression>Remarks</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>予約年月日時分Ctl</Name>
+        <Section>Detail</Section>
+        <Left>2242</Left>
+        <Top>0</Top>
+        <Width>4193</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>Segoe UI</Name>
+        </Font>
+        <Text>
+          <Expression>ReservationDate</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>施設名Ctl</Name>
+        <Section>Detail</Section>
+        <Left>1121</Left>
+        <Top>0</Top>
+        <Width>1121</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>Segoe UI</Name>
+        </Font>
+        <Text>
+          <Expression>FacilityName</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>Field2</Name>
+        <Section>Detail</Section>
+        <Left>1301</Left>
+        <Top>560</Top>
+        <Width>941</Width>
+        <Height>270</Height>
+        <Text>
+          <Value sys="string">備考</Value>
+        </Text>
+      </TextField>
+      <ImageField>
+        <Name>Field4</Name>
+        <Section>Detail</Section>
+        <Left>135</Left>
+        <Top>545</Top>
+        <Width>986</Width>
+        <Height>780</Height>
+        <PictureScale>Stretch</PictureScale>
+        <Picture>
+          <Expression>=Folder</Expression>
+        </Picture>
+      </ImageField>
+      <TextField>
+        <Name>ftrRight</Name>
+        <Section>PageHeader</Section>
+        <Left>6236</Left>
+        <Top>0</Top>
+        <Width>3123</Width>
+        <Height>300</Height>
+        <Align>RightTop</Align>
+        <Font>
+          <Name>Segoe UI</Name>
+          <Size>8</Size>
+        </Font>
+        <Text>
+          <Expression>"ページ " &amp; [Page] &amp; " / " &amp; [Pages]</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>予約年月日Lbl</Name>
+        <Section>GroupHeader1</Section>
+        <Left>0</Left>
+        <Top>0</Top>
+        <Width>3330</Width>
+        <Height>405</Height>
+        <ForcePageBreak>Before</ForcePageBreak>
+        <Align>LeftBottom</Align>
+        <WordWrap>false</WordWrap>
+        <Font>
+          <Name>Segoe UI</Name>
+          <Size>16</Size>
+          <Bold>true</Bold>
+        </Font>
+        <Text>
+          <Expression>ReceiptDate</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>Field1</Name>
+        <Section>GroupHeader1</Section>
+        <Left>3330</Left>
+        <Top>0</Top>
+        <Width>3435</Width>
+        <Height>405</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>Segoe UI</Name>
+          <Size>16</Size>
+        </Font>
+        <Text>
+          <Value sys="string">の衣装予約一覧</Value>
+        </Text>
+      </TextField>
+      <ShapeField>
+        <Name>Field3</Name>
+        <Background type="Solid">
+          <Color>FF000000</Color>
+        </Background>
+        <Section>GroupHeader2</Section>
+        <Left>135</Left>
+        <Top>1020</Top>
+        <Width>9314</Width>
+        <Height>5</Height>
+      </ShapeField>
+      <TextField>
+        <Name>店舗名称Lbl</Name>
+        <Section>GroupHeader2</Section>
+        <Left>0</Left>
+        <Top>0</Top>
+        <Width>3000</Width>
+        <Height>350</Height>
+        <Align>LeftBottom</Align>
+        <WordWrap>false</WordWrap>
+        <Font>
+          <Name>Segoe UI</Name>
+          <Bold>true</Bold>
+        </Font>
+        <Text>
+          <Expression>StoreName</Expression>
+        </Text>
+      </TextField>
+    </Fields>
+  </Report>
+</Reports>

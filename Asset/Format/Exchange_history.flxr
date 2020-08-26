@@ -1,0 +1,434 @@
+<?xml version="1.0"?>
+<Reports>
+  <FormatVersion>1.0 1.0.0.0</FormatVersion>
+  <Report ref="1">
+    <Name>対応履歴一覧表 レポート</Name>
+    <DataSourceName>Main</DataSourceName>
+    <OnOpen>' -- style script start
+_styleCtr = 0
+' -- style script end
+</OnOpen>
+    <ReportInfo>
+      <Author>Hironori Matsuno</Author>
+    </ReportInfo>
+    <Layout>
+      <Width>10205</Width>
+      <Margin>1324.8</Margin>
+      <Orientation>Portrait</Orientation>
+      <PaperSize>A4</PaperSize>
+    </Layout>
+    <Font>
+      <Name>Segoe UI</Name>
+    </Font>
+    <DataSources>
+      <DataSource>
+        <Name>Main</Name>
+        <DataProvider>SqlServerCe4_0</DataProvider>
+        <ConnectionString>Data Source=.\Asset\ReportData.sdf</ConnectionString>
+        <RecordSource>Exchange_history</RecordSource>
+        <RecordSourceType>TableDirect</RecordSourceType>
+      </DataSource>
+      <DataSource>
+        <Name>DataSource1</Name>
+        <DataProvider>SqlServerCe4_0</DataProvider>
+        <ConnectionString>Data Source=.\Asset\ReportData.sdf</ConnectionString>
+        <RecordSource>Exchange_history</RecordSource>
+        <RecordSourceType>TableDirect</RecordSourceType>
+      </DataSource>
+    </DataSources>
+    <Sections>
+      <Section>
+        <Name>Detail</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection>
+            <Height>3630</Height>
+          </SubSection>
+        </SubSections>
+        <Type>Detail</Type>
+        <OnPrint>' -- style script start
+detail.BackColor = iif(_styleCtr mod 2 = 0, rgb(255,255,255),rgb(240,240,240))
+_styleCtr = _styleCtr + 1
+' -- style script end
+</OnPrint>
+      </Section>
+      <Section>
+        <Name>Header</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>Header</Type>
+      </Section>
+      <Section>
+        <Name>Footer</Name>
+        <SubSections>
+          <SubSection>
+            <Height>30</Height>
+          </SubSection>
+        </SubSections>
+        <Type>Footer</Type>
+      </Section>
+      <Section>
+        <Name>PageHeader</Name>
+        <Background type="Solid">
+          <Color>FFC2DCFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection>
+            <Background type="Solid">
+              <Color>FFFFFFFF</Color>
+            </Background>
+            <Height>690</Height>
+          </SubSection>
+          <SubSection>
+            <Background type="Solid">
+              <Color>FFFFFFFF</Color>
+            </Background>
+            <Height>480</Height>
+          </SubSection>
+        </SubSections>
+        <Type>PageHeader</Type>
+      </Section>
+      <Section>
+        <Name>PageFooter</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>PageFooter</Type>
+      </Section>
+    </Sections>
+    <Fields>
+      <Field>
+        <Name>pushLin</Name>
+        <Border>
+          <Left>
+            <Style>Solid</Style>
+            <Width>30</Width>
+          </Left>
+          <Top>
+            <Style>Solid</Style>
+            <Width>30</Width>
+          </Top>
+          <Right>
+            <Style>Solid</Style>
+            <Width>30</Width>
+          </Right>
+          <Bottom>
+            <Style>Solid</Style>
+            <Width>30</Width>
+          </Bottom>
+        </Border>
+        <Background type="Solid">
+          <Color>FF000000</Color>
+        </Background>
+        <Section>Detail</Section>
+        <Left>65</Left>
+        <Top>0</Top>
+        <Width>10140</Width>
+        <Height>0</Height>
+        <Align>LeftTop</Align>
+        <ForeColor>FF204D89</ForeColor>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+      </Field>
+      <TextField>
+        <Name>receiptDateCtl</Name>
+        <Section>Detail</Section>
+        <Left>65</Left>
+        <Top>90</Top>
+        <Width>1249</Width>
+        <Height>280</Height>
+        <AutoHeight>CanGrow</AutoHeight>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>receiptDate</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>receiptTimeCtl</Name>
+        <Section>Detail</Section>
+        <Left>1417</Left>
+        <Top>90</Top>
+        <Width>850</Width>
+        <Height>280</Height>
+        <AutoHeight>CanGrow</AutoHeight>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>receiptTime</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>receiptStoreCtl</Name>
+        <Section>Detail</Section>
+        <Left>2412</Left>
+        <Top>90</Top>
+        <Width>1557</Width>
+        <Height>280</Height>
+        <AutoHeight>CanGrow</AutoHeight>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>receiptStore</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>receiptStaffCtl</Name>
+        <Section>Detail</Section>
+        <Left>4047</Left>
+        <Top>90</Top>
+        <Width>1906</Width>
+        <Height>280</Height>
+        <AutoHeight>CanGrow</AutoHeight>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>receiptStaff</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>receiptCustomerSurnameCtl</Name>
+        <Section>Detail</Section>
+        <Left>6133</Left>
+        <Top>90</Top>
+        <Width>2088</Width>
+        <Height>280</Height>
+        <AutoHeight>CanGrow</AutoHeight>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>receiptCustomerName</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>receiptStatusCtl</Name>
+        <Section>Detail</Section>
+        <Left>8401</Left>
+        <Top>90</Top>
+        <Width>1237</Width>
+        <Height>280</Height>
+        <AutoHeight>CanGrow</AutoHeight>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>receiptStatus</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>receiptMemoLbl</Name>
+        <Section>Detail</Section>
+        <Left>567</Left>
+        <Top>570</Top>
+        <Width>990</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Value sys="string">対応内容</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>receiptMemoCtl</Name>
+        <Section>Detail</Section>
+        <Left>1701</Left>
+        <Top>570</Top>
+        <Width>8324</Width>
+        <Height>1327</Height>
+        <AutoHeight>CanGrow</AutoHeight>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>receiptMemo</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>fldinternalRegulations1</Name>
+        <Section>Detail</Section>
+        <Left>1737</Left>
+        <Top>1987</Top>
+        <Width>8288</Width>
+        <Height>1463</Height>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>receiptClaim</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>receiptMemoLbl1</Name>
+        <Section>Detail</Section>
+        <Left>567</Left>
+        <Top>1988</Top>
+        <Width>990</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Value sys="string">内規情報</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>fldreportTitle1</Name>
+        <Section>PageHeader</Section>
+        <Left>180</Left>
+        <Top>0</Top>
+        <Width>7420</Width>
+        <Height>480</Height>
+        <ForeColor>FF204D89</ForeColor>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>16</Size>
+        </Font>
+        <Text>
+          <Expression>reportTitle</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>ftrRight</Name>
+        <Section>PageHeader</Section>
+        <Left>7654</Left>
+        <Top>0</Top>
+        <Width>2551</Width>
+        <Height>300</Height>
+        <Align>RightTop</Align>
+        <ForeColor>FF204D89</ForeColor>
+        <Font>
+          <Name>Segoe UI</Name>
+        </Font>
+        <Text>
+          <Expression>"ページ " &amp; [Page] &amp; " / " &amp; [Pages]</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>receiptCustomerNameLbl</Name>
+        <Section>PageHeader</Section>
+        <SubSectionIndex>1</SubSectionIndex>
+        <Left>6097</Left>
+        <Top>110</Top>
+        <Width>990</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <ForeColor>FF204D89</ForeColor>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Value sys="string">お客様名</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>receiptDateLbl</Name>
+        <Section>PageHeader</Section>
+        <SubSectionIndex>1</SubSectionIndex>
+        <Left>320</Left>
+        <Top>135</Top>
+        <Width>1417</Width>
+        <Height>280</Height>
+        <Align>CenterTop</Align>
+        <ForeColor>FF204D89</ForeColor>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Value sys="string">受付日時</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>receiptStoreLbl</Name>
+        <Section>PageHeader</Section>
+        <SubSectionIndex>1</SubSectionIndex>
+        <Left>2412</Left>
+        <Top>135</Top>
+        <Width>1273</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <ForeColor>FF204D89</ForeColor>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Value sys="string">受付店舗</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>receiptStaffLbl</Name>
+        <Section>PageHeader</Section>
+        <SubSectionIndex>1</SubSectionIndex>
+        <Left>4047</Left>
+        <Top>135</Top>
+        <Width>990</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <ForeColor>FF204D89</ForeColor>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Value sys="string">対応店員</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>receiptStatusLbl</Name>
+        <Section>PageHeader</Section>
+        <SubSectionIndex>1</SubSectionIndex>
+        <Left>8401</Left>
+        <Top>135</Top>
+        <Width>1372</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <ForeColor>FF204D89</ForeColor>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Value sys="string">ステータス</Value>
+        </Text>
+      </TextField>
+    </Fields>
+  </Report>
+</Reports>

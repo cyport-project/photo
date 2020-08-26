@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>C1.Win.C1SuperTooltip.4</name>
+  </assembly>
+  <members>
+    <member name="T:C1.Win.C1SuperTooltip.C1SuperLabel">
+      <summary>フォームに静的な情報を表示するラベルを表します。</summary>
+      <remarks>
+        <para>
+          <b>C1SuperLabel</b>コントロールは
+          <see cref="T:System.Windows.Forms.Label" />コントロールとほとんど同じですが、
+          <b>C1SuperLabel</b>はプレーンテキストではなく HTML テキストを表示するという点だけが異なります。これにより、ラベルに複数のフォント、色、テーブル、リスト、および画像を含めることができます。
+        </para>
+        <para>
+          <b>C1SuperLabel</b>は、HTML コンテンツをレンダリングするために IE を使用しません。代わりに、独自の軽量な HTML パーサーおよびレンダラーを備えています。したがって、レンダリングされる出力は、IE と必ずしも 100% の互換性はありませんが、通常はほとんど同じです。
+          <b>C1SuperLabel</b>は、カスケードスタイルシート、テーブルなどのほとんどの HTML 機能をサポートします。詳細については、
+          <see cref="P:C1.Win.C1SuperTooltip.C1SuperLabel.Text" />プロパティを参照してください。
+        </para>
+      </remarks>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperLabel.#ctor">
+      <summary>
+        <see cref="T:C1.Win.C1SuperTooltip.C1SuperLabel" />コントロールの新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.C1SuperLabel.Text">
+      <summary>コントロールに表示される HTML テキストを取得または設定します。</summary>
+      <remarks>
+        <para>
+          <see cref="T:C1.Win.C1SuperTooltip.C1SuperLabel" />は、カスケードスタイルシート、テーブル、画像などを含む HTML テキストを表示できます。ラベルに画像を入れるには、通常どおり &lt;img&gt; タグを使用し、次の形式で文字列に「src」属性を設定します。
+        </para>
+        <code>
+          <![CDATA[
+          'res://[resourcename]'
+          ]]>
+        </code>
+        <para>
+          ここで、
+          <code>[resourcename]</code>は、画像を含む埋め込みリソースの名前です。次に具体例を示します。
+        </para>
+      </remarks>
+      <example>
+        <para>
+          次のコードは、
+          <see cref="T:C1.Win.C1SuperTooltip.C1SuperLabel" />を使用して、いくつかの画像を含むテーブルを表示します。画像は、現在のアプリケーションのリソースから取得されます。
+        </para>
+        <code>
+          <![CDATA[
+          _c1SuperLabel.Text = "&lt;table&gt;" + 
+            "&lt;tr&gt;" + 
+            "&lt;td&gt;&lt;img src='res://newToolStripButton.Image'&gt;" + 
+            "&lt;td&gt;これは一番上の行の２番目のセルです" + 
+            "&lt;tr&gt;" + 
+            "&lt;td&gt;&lt;img src='res://openToolStripButton.Image'&gt;" + 
+            "&lt;td&gt;これは一番下の行の２番目のセルです" + 
+            "&lt;/table&gt;";
+          ]]>
+        </code>
+      </example>
+    </member>
+    <member name="T:C1.Win.C1SuperTooltip.C1SuperTooltip">
+      <summary>ポインタがコントロールの上に置かれたときにコントロールの目的の簡単な説明を表示するポップアップウィンドウを表します。</summary>
+      <remarks>
+        <para>
+          <b>C1SuperTooltip</b>コンポーネントは
+          <see cref="T:System.Windows.Forms.ToolTip" />コンポーネントとほとんど同じですが、
+          <b>C1SuperTooltip</b>はプレーンテキストではなく HTML テキストを表示するという点だけが異なります。これにより、ツールチップに複数のフォント、色、テーブル、リスト、および画像を含めることができます。詳細および例については、
+          <see cref="M:C1.Win.C1SuperTooltip.C1SuperTooltip.SetToolTip(System.Windows.Forms.Control,System.String)" />メソッドを参照してください。
+        </para>
+        <para>
+          HTML ツールチップは、フォーム内の任意の
+          <see cref="T:System.Windows.Forms.Control" />または
+          <see cref="T:System.Windows.Forms.ToolStripItem" />に関連付けることができます。
+        </para>
+        <para>
+          <b>C1SuperTooltip</b>は、HTML コンテンツをレンダリングするために IE を使用しません。代わりに、独自の軽量な HTML パーサーおよびレンダラーを備えています。したがって、レンダリングされる出力は、IE と必ずしも 100% の互換性はありませんが、通常はほとんど同じです。
+          <b>C1SuperTooltip</b>は、カスケードスタイルシート、テーブルなどのほとんどの HTML 機能をサポートします。詳細については、
+          <see cref="M:C1.Win.C1SuperTooltip.C1SuperTooltip.SetToolTip(System.Windows.Forms.Control,System.String)" />メソッドを参照してください。
+        </para>
+        <para>
+          <b>C1SuperTooltip</b>コンポーネントを使用して、ポインタがコントロールの上に置かれたときにヘルプを表示できます。
+          <b>C1SuperTooltip</b>コンポーネントは、通常、ユーザーにコントロールの用途を通知するために使用されます。たとえば、名前を入力する
+          <b>TextBox</b>コントロールにツールチップテキストを指定して、コントロールに入力する名前の形式を指定できます。ヘルプを提供する以外にも、
+          <b>C1SuperTooltip</b>コンポーネントを使用して、実行時の状態情報を提供することもできます。たとえば、
+          <b>C1SuperTooltip</b>コンポーネントを使用して、インターネット接続の状態を表示する
+          <b>PictureBox</b>コントロールの上にポインタが置かれたときに、接続速度や回線品質データを表示できます。
+        </para>
+        <para>
+          <b>C1SuperTooltip</b>コンポーネントには、ツールチップウィンドウを表示する時間と表示するまでの時間を変更できるプロパティがあります。
+          <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutoPopDelay" />プロパティは、ツールチップウィンドウを表示する時間を決定します。
+          <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.InitialDelay" />および
+          <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.ReshowDelay" />プロパティは、ツールチップウィンドウを表示するまでの時間を決定します。このすべてのプロパティを一貫したパターンに設定するには、
+          <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutomaticDelay" />プロパティを使用できます。その後、この値を使用して、その他の遅延プロパティの値を計算および設定します。コントロールが含まれる
+          <b>フォーム</b>やコンテナが有効かどうかには関係なくコントロールのツールチップテキストを表示するには、
+          <b>ShowAlways</b>プロパティを使用できます。アプリケーションですべてのツールチップテキストを非表示にする場合は、
+          <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.Active" />プロパティを使用できます。
+        </para>
+        <para>
+          <b>C1SuperTooltip</b>コンポーネントは、任意のコンテナで使用できます。特定のコンテナを指定して
+          <b>C1SuperTooltip</b>コンポーネントを使用するには、
+          <b>C1SuperTooltip</b>コンストラクタを使用します。ユーザーがポインタをコントロールの上に置いたときにツールチップテキストを表示するには、
+          <b>C1SuperTooltip</b>コンポーネントのインスタンス内で、表示するツールチップテキストがコントロールに関連付けられている必要があります。ツールチップテキストをコントロールに関連付けるには、
+          <see cref="M:C1.Win.C1SuperTooltip.C1SuperTooltip.SetToolTip(System.Windows.Forms.Control,System.String)" />メソッドを使用します。
+          <b>SetToolTip</b>メソッドは、コントロールに関連付けられるテキストを変更するために同じコントロールに対して何度でも呼び出すことができます。コントロールに関連付けられているテキストを取得する場合は、
+          <see cref="M:C1.Win.C1SuperTooltip.C1SuperTooltip.GetToolTip(System.Windows.Forms.Control)" />メソッドを使用します。
+          <b>C1SuperTooltip</b>コンポーネントのインスタンスとツールチップテキストの関連付けをすべて削除するには、
+          <see cref="M:C1.Win.C1SuperTooltip.C1SuperTooltip.RemoveAll" />メソッドを使用します。
+        </para>
+      </remarks>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.#ctor">
+      <summary>
+        <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip" />コンポーネントの新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.#ctor(System.ComponentModel.IContainer)">
+      <summary>
+        <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip" />コンポーネントの新しいインスタンスを初期化します。
+      </summary>
+      <param name="container">
+        <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip" />のコンテナを表す
+        <see cref="T:System.ComponentModel.IContainer" />。
+      </param>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.GetToolTip(System.Windows.Forms.Control)">
+      <summary>
+        指定したコントロールに関連付けられている
+        <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip" />テキストを取得します。
+      </summary>
+      <param name="control">
+        ツールチップテキストを取得する
+        <b>コントロール</b>。
+      </param>
+      <returns>指定されたコントロールのツールチップテキスト。</returns>
+      <remarks>
+        このメソッドを使用して、任意のコントロールのツールチップテキストを取得できます。アプリケーション内でツールチップテキストが動的に変更される場合は、このメソッドを使用し、アプリケーションの状態に基づいて、任意の時点で表示されているテキストを調べることができます。コントロールに表示されるテキストを変更するには、
+        <see cref="M:C1.Win.C1SuperTooltip.C1SuperTooltip.SetToolTip(System.Windows.Forms.Control,System.String)" />メソッドを使用します。
+      </remarks>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.SetToolTip(System.Windows.Forms.Control,System.String)">
+      <summary>指定したコントロールにツールチップの HTML テキストを関連付けます。</summary>
+      <remarks>
+        <para>
+          コントロールに表示するツールチップテキストを指定するほかに、このメソッドを使用して、コントロールのツールチップテキストを変更できます。特定のコントロールに対して
+          <b>SetToolTip</b>メソッドを何度か呼び出しても、複数のツールチップテキストを指定してコントロールに表示することはできませんが、コントロールの現在のツールチップテキストを変更することはできます。
+        </para>
+        <para>
+          実行時にコントロールに関連付けられているツールチップテキストを決定するには、
+          <see cref="M:C1.Win.C1SuperTooltip.C1SuperTooltip.GetToolTip(System.Windows.Forms.Control)" />メソッドを使用できます。
+        </para>
+        <para>
+          <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip" />は、カスケードスタイルシート、テーブル、画像などを含む HTML テキストを表示できます。ツールチップに画像を入れるには、通常どおり &lt;img&gt; タグを使用し、次の形式で文字列に「src」属性を設定します。
+        </para>
+        <code>'res://[resourcename]'</code>
+        <para>
+          ここで、
+          <code>[resourcename]</code>は、画像を含む埋め込みリソースの名前です。次に具体例を示します。
+        </para>
+      </remarks>
+      <example>
+        次のコードは、
+        <b>ListBox</b>コントロールに HTML コードを関連付けます。この HTML は、太字の単語を含む２行のテキストを表示します。
+        <code>
+          <![CDATA[
+          _C1SuperTooltip1.SetToolTip(this.listBox1, 
+            "これは、&lt;b&gt;太字テキスト&lt;/b&gt;を持つツールチップです&lt;br&gt;これは同時に複数行テキストです....");
+          ]]>
+        </code>
+        次のコードは、
+        <b>RichTextBox</b>コントロールに HTML コードを関連付けます。この HTML は、２列のテーブルを表示します。最初の列には、アプリケーションのリソースから読み込んだ画像が含まれます。この場合は、アプリケーションに「tips.gif」という名前の埋め込みリソースが格納されている必要があります。２番目の列には、いくつかの書式設定済みテキストが含まれます。
+        <code>
+          <![CDATA[
+          _C1SuperTooltip1.SetToolTip(richTextBox1, 
+            @"&lt;table&gt;&lt;tr&gt; &lt;td&gt;&lt;img src='res://tips.gif'/&gt;&lt;/td&gt; &lt;td&gt;これはリッチテキストボックスに&lt;br&gt;&lt;b&gt;関連付けられている&lt;/b&gt;&lt;br&gt;複数行のツールチップです...&lt;/td&gt; &lt;/tr&gt;&lt;/table&gt;");
+          ]]>
+        </code>
+      </example>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.SetToolTip(System.Windows.Forms.ToolStripItem,System.String)">
+      <summary>
+        指定した
+        <see cref="T:System.Windows.Forms.ToolStripItem" />にツールチップの HTML テキストを関連付けます。
+      </summary>
+      <param name="item">
+        ツールチップテキストを関連付ける
+        <b>ToolStripItem</b>。
+      </param>
+      <param name="text">マウスポインタをコントロールの上に置くと表示されるツールチップテキスト。</param>
+    </member>
+    <member name="T:C1.Win.C1SuperTooltip.Strings">
+      <summary>デザイナによって使用される UI 文字列を含む静的クラス。</summary>
+    </member>
+    <member name="T:C1.Win.C1SuperTooltip.C1SuperErrorProvider">
+      <summary>コントロールに関連付けられたエラーがフォーム上のコントロールに発生していることを示すユーザーインタフェースを提供します。</summary>
+      <remarks>
+        <b>C1SuperErrorProvider</b>は、コントロールに関連付けられたエラーがフォーム上のコントロールに発生していることをエンドユーザーに示すメカニズムを提供します。 エラーを説明する文字列によってコントロールが特定される場合、コントロールの横にアイコンが表示されます。 アイコンは、
+        <see cref="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.BlinkStyle" />によって指定された方法、
+        <see cref="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.BlinkRate" />によって指定された速度で点滅します。 マウスをアイコン上に置くと、エラーの説明を示す
+        <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip" />が HTML テキストで表示されます。
+      </remarks>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.#ctor">
+      <summary>
+        <see cref="T:C1.Win.C1SuperTooltip.C1SuperErrorProvider" />コンポーネントの新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.#ctor(System.ComponentModel.IContainer)">
+      <summary>
+        <see cref="T:C1.Win.C1SuperTooltip.C1SuperErrorProvider" />コンポーネントの新しいインスタンスを初期化します。
+      </summary>
+      <param name="container">
+        エラーを監視する
+        <see cref="T:System.ComponentModel.IContainer" />。
+      </param>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.#ctor(System.Windows.Forms.ContainerControl)">
+      <summary>
+        <see cref="T:C1.Win.C1SuperTooltip.C1SuperErrorProvider" />コンポーネントの新しいインスタンスを初期化します。
+      </summary>
+      <param name="parentControl">エラーを監視するコントロールのコンテナ。</param>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.Dispose(System.Boolean)">
+      <summary>使用されているすべてのリソースをクリーンアップします。</summary>
+      <param name="disposing">マネージドリソースが破棄される場合は true、そうでない場合は false。</param>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.GetError(System.Windows.Forms.Control)">
+      <summary>指定されたコントロールの現在のエラー説明テキストを返します。</summary>
+      <param name="control">エラー説明テキストを取得する対象の項目。</param>
+      <returns>指定されたコントロールのエラー説明テキスト。</returns>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.SetError(System.Windows.Forms.Control,System.String)">
+      <summary>指定されたコントロールのエラー説明テキストを設定します。</summary>
+      <param name="control">エラー説明テキストを設定する対象のコントロール。</param>
+      <param name="value">エラー説明テキスト。</param>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.GetIconAlignment(System.Windows.Forms.Control)">
+      <summary>エラーアイコンがコントロールとの関連で配置される位置を示す値を取得します。</summary>
+      <param name="control">アイコンの位置を取得する対象のコントロール。</param>
+      <returns>ErrorIconAlignment 値の１つ。 デフォルトのアイコンの配置は MiddleRight です。</returns>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.SetIconAlignment(System.Windows.Forms.Control,System.Windows.Forms.ErrorIconAlignment)">
+      <summary>エラーアイコンがコントロールとの関連で配置される位置を設定します。</summary>
+      <param name="control">アイコンの位置を設定する対象のコントロール。</param>
+      <param name="value">ErrorIconAlignment 値の１つ。</param>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.GetIconPadding(System.Windows.Forms.Control)">
+      <summary>エラーアイコンの隣に残す余分のスペースの量を返します。</summary>
+      <param name="control">埋め込みを取得する対象のコントロール。</param>
+      <returns>アイコンとコントロールの間に残すピクセル数。</returns>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.SetIconPadding(System.Windows.Forms.Control,System.Int32)">
+      <summary>指定されたコントロールとエラーアイコンの間に残す余分のスペースの量を設定します。</summary>
+      <param name="control">埋め込みを設定する対象のコントロール。</param>
+      <param name="padding">アイコンとコントロールの間に追加するピクセル数。</param>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.ShouldSerializeIcon">
+      <summary>このメンバは内部専用です。</summary>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.ResetIcon">
+      <summary>このメンバは内部専用です。</summary>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.OnIconClick(C1.Win.C1SuperTooltip.IconClickEventArgs)">
+      <summary>
+        <see cref="E:C1.Win.C1SuperTooltip.C1SuperErrorProvider.IconClick" />イベントを発生させます。
+      </summary>
+      <param name="e">
+        <see cref="T:C1.Win.C1SuperTooltip.IconClickEventArgs" />イベントデータを含む
+        <see cref="T:C1.Win.C1SuperTooltip.IconClickEventArgs" />オブジェクト。
+      </param>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.OnIconDoubleClick(C1.Win.C1SuperTooltip.IconClickEventArgs)">
+      <summary>
+        <see cref="E:C1.Win.C1SuperTooltip.C1SuperErrorProvider.IconDoubleClick" />イベントを発生させます。
+      </summary>
+      <param name="e">
+        <see cref="T:C1.Win.C1SuperTooltip.IconClickEventArgs" />イベントデータを含む
+        <see cref="T:C1.Win.C1SuperTooltip.IconClickEventArgs" />オブジェクト。
+      </param>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.BindToDataAndErrors(System.Object,System.String)">
+      <summary>
+        実行時に
+        <see cref="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.DataSource" />と
+        <see cref="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.DataMember" />の両方を設定するメソッドを提供します。
+      </summary>
+      <param name="newDataSource">エラーが監視される IList インタフェースに基づくデータセット。 通常、これはエラーが監視される DataSet です。</param>
+      <param name="newDataMember">エラーを監視する newDataSource 内のコレクション。 通常、これは DataTable です。</param>
+      <remarks>
+        <see cref="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.DataSource" />および
+        <see cref="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.DataMember" />の変更時に発生する可能性のある実行時の競合を回避するには、
+        <see cref="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.DataSource" />および
+        <see cref="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.DataMember" />を個別に設定する代わりに BindToDataAndErrors を使用する必要があります。
+      </remarks>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.UpdateBinding">
+      <summary>
+        <see cref="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.DataSource" />、
+        <see cref="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.DataMember" />、およびエラーテキストのバインドを更新するメソッドを提供します。
+      </summary>
+      <remarks>
+        通常、
+        <see cref="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.BindToDataAndErrors(System.Object,System.String)" />を呼び出した後にこのメソッドを呼び出します。
+      </remarks>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperErrorProvider.Clear">
+      <summary>エラーグリフをすべて削除し、このコンポーネントに関連付けられた設定をクリアします。</summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.Site">
+      <summary>コンポーネントの ISite を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.ContainerControl">
+      <summary>
+        この
+        <see cref="T:C1.Win.C1SuperTooltip.C1SuperErrorProvider" />の親コントロールを示す値を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.ToolTip">
+      <summary>
+        エラー説明テキストの表示に関連付けられた
+        <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip" />コンポーネントを取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.DataSource">
+      <summary>
+        <see cref="T:C1.Win.C1SuperTooltip.C1SuperErrorProvider" />が監視するデータソースを取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.DataMember">
+      <summary>監視するデータソース内のリストを取得または設定します。</summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.Icon">
+      <summary>エラー説明テキストがコントロールに設定されたときにコントロールの隣に表示するアイコンを取得または設定します。</summary>
+      <remarks>
+        <see cref="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.Image" />が空の場合、Icon プロパティが使用されます。
+      </remarks>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.Image">
+      <summary>エラー説明テキストがコントロールに設定されたときにコントロールの隣に表示する画像を取得または設定します。</summary>
+      <remarks>
+        画像が空でない場合、その画像が
+        <see cref="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.Icon" />の代わりに使用されます。
+      </remarks>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.ImageHot">
+      <summary>マウスがエラーアイコンの上に置かれたときにコントロールの隣に表示する画像を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.Antiphased">
+      <summary>さまざまなコントロールの異なるフェーズでエラーアイコンを点滅させるかどうかを取得または設定します。</summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.BlinkCount">
+      <summary>新しいエラーテキストをコントロールに設定する場合のアイコンの点滅数を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.BlinkRate">
+      <summary>エラーアイコンが点滅する速度（ミリ秒）を取得または設定します。 デフォルトは 250 ミリ秒です。</summary>
+      <remarks>
+        エラーアイコンは指定された速度で点滅します。
+        <see cref="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.BlinkStyle" />を NeverBlink に設定するには、値をゼロにします。
+      </remarks>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.BlinkStyle">
+      <summary>エラーアイコンが点滅する場合を示す値を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.C1SuperErrorProvider.Tag">
+      <summary>コンポーネントに関するデータを含むオブジェクトを取得または設定します。</summary>
+    </member>
+    <member name="E:C1.Win.C1SuperTooltip.C1SuperErrorProvider.IconClick">
+      <summary>エラーアイコンがマウスクリックでクリックされたときに発生します。</summary>
+    </member>
+    <member name="E:C1.Win.C1SuperTooltip.C1SuperErrorProvider.IconDoubleClick">
+      <summary>エラーアイコンが２回以上クリックされたときに発生します。</summary>
+    </member>
+    <member name="T:C1.Win.C1SuperTooltip.IconClickEventHandler">
+      <summary>
+        <see cref="E:C1.Win.C1SuperTooltip.C1SuperErrorProvider.IconClick" />イベントを処理するメソッドを表します。
+      </summary>
+      <param name="sender">イベントを発生したオブジェクト。</param>
+      <param name="e">
+        イベントデータを含む
+        <see cref="T:C1.Win.C1SuperTooltip.IconClickEventArgs" />オブジェクト。
+      </param>
+    </member>
+    <member name="T:C1.Win.C1SuperTooltip.IconClickEventArgs">
+      <summary>
+        <see cref="E:C1.Win.C1SuperTooltip.C1SuperErrorProvider.IconClick" />イベントのデータを提供します。
+      </summary>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.IconClickEventArgs.#ctor(System.Windows.Forms.Control,System.String,System.Windows.Forms.MouseButtons,System.Int32,System.Drawing.Point)">
+      <summary>
+        <see cref="T:C1.Win.C1SuperTooltip.IconClickEventArgs" />の新しいインスタンスを初期化します。
+      </summary>
+      <param name="control">関連付けられたエラーを持つコントロール。</param>
+      <param name="error">エラー説明テキスト。</param>
+      <param name="button">アイコン上でクリックされたボタン。</param>
+      <param name="clicks">マウスボタンがクリックされた回数。</param>
+      <param name="location">画面座標のマウスの位置。</param>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.IconClickEventArgs.Control">
+      <summary>関連付けられたエラーを持つコントロールを取得します。</summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.IconClickEventArgs.Error">
+      <summary>エラー説明テキストを取得します。</summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.IconClickEventArgs.Button">
+      <summary>アイコン上でクリックされたマウスボタンを取得します。</summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.IconClickEventArgs.Clicks">
+      <summary>マウスボタンがクリックされた回数を取得します。</summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.IconClickEventArgs.Location">
+      <summary>イベントの生成中に（画面座標の）マウスの位置を取得します。</summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.IconClickEventArgs.X">
+      <summary>イベントの生成中にマウスの x 座標を取得します。</summary>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.IconClickEventArgs.Y">
+      <summary>イベントの生成中にマウスの y 座標を取得します。</summary>
+    </member>
+    <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.GetToolTip(System.Windows.Forms.ToolStripItem)">
+      <summary>
+        指定された
+        <see cref="T:System.Windows.Forms.ToolStripItem" />コンポーネントに関連付けられている
+        <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip" />テキストを取得します。
+      </summary>
+      <param name="item">
+        ツールチップテキストを取得する
+        <b>ToolStripItem</b>。
+      </param>
+      <returns>
+        指定された
+        <see cref="T:System.Windows.Forms.ToolStripItem" />コンポーネントのツールチップテキスト。
+      </returns>
+    </member>
+    <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.RightToLeft">
+      <summary>コントロールの要素が、右から左に表記されるフォントを使用するロケールをサポートするように配置されているかどうかを示す値を取得または設定します。</summary>
+    </member>
+  </members>
+</doc>

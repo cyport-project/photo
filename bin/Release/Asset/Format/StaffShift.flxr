@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<Reports>
+  <FormatVersion>1.0 1.0.0.0</FormatVersion>
+  <Report ref="1">
+    <Name>StaffShift</Name>
+    <DataSourceName>DataSource1</DataSourceName>
+    <OnOpen>' -- style script start
+_styleCtr = 0
+' -- style script end
+</OnOpen>
+    <ReportInfo>
+      <Author>hirabayashi</Author>
+    </ReportInfo>
+    <Layout>
+      <Width>9390</Width>
+      <Orientation>Portrait</Orientation>
+      <PaperSize>A4</PaperSize>
+    </Layout>
+    <Font>
+      <Name>Segoe UI</Name>
+    </Font>
+    <DataSources>
+      <DataSource>
+        <Name>Main</Name>
+        <DataProvider>SqlServerCe4_0</DataProvider>
+        <ConnectionString>Data Source=Asset\ReportData.sdf</ConnectionString>
+        <RecordSource>Staff_Shift</RecordSource>
+        <RecordSourceType>TableDirect</RecordSourceType>
+      </DataSource>
+      <DataSource>
+        <Name>DataSource1</Name>
+        <DataProvider>SqlServerCe4_0</DataProvider>
+        <ConnectionString>Data Source=Asset\ReportData.sdf</ConnectionString>
+        <RecordSource>Staff_Shift</RecordSource>
+        <RecordSourceType>TableDirect</RecordSourceType>
+      </DataSource>
+    </DataSources>
+    <Sections>
+      <Section>
+        <Name>Detail</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection>
+            <Height>375</Height>
+          </SubSection>
+        </SubSections>
+        <Type>Detail</Type>
+        <OnPrint>' -- style script start
+detail.BackColor = iif(_styleCtr mod 2 = 0, rgb(255,255,255),rgb(240,240,240))
+_styleCtr = _styleCtr + 1
+' -- style script end
+</OnPrint>
+      </Section>
+      <Section>
+        <Name>Header</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection>
+            <Height>1215</Height>
+          </SubSection>
+        </SubSections>
+        <Type>Header</Type>
+      </Section>
+      <Section>
+        <Name>Footer</Name>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>Footer</Type>
+      </Section>
+      <Section>
+        <Name>PageHeader</Name>
+        <Background type="Solid">
+          <Color>FFC2DCFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection>
+            <Name>STARTTIME</Name>
+            <Height>285</Height>
+          </SubSection>
+        </SubSections>
+        <Type>PageHeader</Type>
+      </Section>
+      <Section>
+        <Name>PageFooter</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection>
+            <Height>500</Height>
+          </SubSection>
+        </SubSections>
+        <Type>PageFooter</Type>
+      </Section>
+    </Sections>
+    <Fields>
+      <TextField>
+        <Name>ftrLeft</Name>
+        <Section>PageFooter</Section>
+        <Left>50</Left>
+        <Top>30</Top>
+        <Width>4512.75590551181</Width>
+        <Height>300</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>Segoe UI</Name>
+          <Size>8</Size>
+        </Font>
+        <Text>
+          <Expression>Now()</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>ftrRight</Name>
+        <Section>PageFooter</Section>
+        <Left>4512.75590551181</Left>
+        <Top>30</Top>
+        <Width>4512.75590551181</Width>
+        <Height>300</Height>
+        <Align>RightTop</Align>
+        <Font>
+          <Name>Segoe UI</Name>
+          <Size>8</Size>
+        </Font>
+        <Text>
+          <Expression>"ページ " &amp; [Page] &amp; " / " &amp; [Pages]</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>NO</Name>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>5</Top>
+        <Width>375</Width>
+        <Height>220</Height>
+        <Text>
+          <Value sys="string">No.</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>STAFF</Name>
+        <Section>PageHeader</Section>
+        <Left>555</Left>
+        <Top>5</Top>
+        <Width>3090</Width>
+        <Height>240</Height>
+        <Text>
+          <Value sys="string">名前</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>WORKSTYLE</Name>
+        <Section>PageHeader</Section>
+        <Left>3855</Left>
+        <Top>25</Top>
+        <Width>1125</Width>
+        <Height>220</Height>
+        <Text>
+          <Value sys="string">就業区分</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>STARTTIME</Name>
+        <Section>PageHeader</Section>
+        <Left>5160</Left>
+        <Top>25</Top>
+        <Width>1497</Width>
+        <Height>225</Height>
+        <Text>
+          <Value sys="string">開始時間</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>ENDTIME</Name>
+        <Section>PageHeader</Section>
+        <Left>6960</Left>
+        <Top>35</Top>
+        <Width>1515</Width>
+        <Height>215</Height>
+        <Text>
+          <Value sys="string">終了時間</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>fldSTAFFNAME1</Name>
+        <Section>Detail</Section>
+        <Left>525</Left>
+        <Top>0</Top>
+        <Width>3120</Width>
+        <Height>280</Height>
+        <Text>
+          <Expression>STAFFNAME</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>fldNO1</Name>
+        <Section>Detail</Section>
+        <Left>50</Left>
+        <Top>0</Top>
+        <Width>375</Width>
+        <Height>280</Height>
+        <Text>
+          <Expression>NO</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>fldWORKSTYLE1</Name>
+        <Section>Detail</Section>
+        <Left>3855</Left>
+        <Top>15</Top>
+        <Width>1125</Width>
+        <Height>280</Height>
+        <Text>
+          <Expression>WORKSTYLE</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>fldSTARTTIME1</Name>
+        <Section>Detail</Section>
+        <Left>5160</Left>
+        <Top>0</Top>
+        <Width>1497</Width>
+        <Height>265</Height>
+        <Text>
+          <Expression>STARTTIME</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>fldENDTIME1</Name>
+        <Section>Detail</Section>
+        <Left>7035</Left>
+        <Top>0</Top>
+        <Width>1440</Width>
+        <Height>280</Height>
+        <Text>
+          <Expression>ENDTIME</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>Field1</Name>
+        <Section>PageHeader</Section>
+        <Left>300</Left>
+        <Top>70</Top>
+        <Width>0</Width>
+        <Height>15</Height>
+      </TextField>
+      <TextField>
+        <Name>titleLbl1</Name>
+        <Section>Header</Section>
+        <Left>50</Left>
+        <Top>0</Top>
+        <Width>880</Width>
+        <Height>395</Height>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>Segoe UI</Name>
+          <Size>12</Size>
+        </Font>
+        <Text>
+          <Value sys="string">店舗名:</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>fldYMD1</Name>
+        <Section>Header</Section>
+        <Left>50</Left>
+        <Top>865</Top>
+        <Width>2265</Width>
+        <Height>305</Height>
+        <Font>
+          <Name>Segoe UI</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>YMD</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>titleLbl</Name>
+        <Section>Header</Section>
+        <Left>2495</Left>
+        <Top>550</Top>
+        <Width>6811</Width>
+        <Height>620</Height>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>Segoe UI</Name>
+          <Size>20</Size>
+        </Font>
+        <Text>
+          <Value sys="string">スタッフシフト一覧</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>titleLbl2</Name>
+        <Section>Header</Section>
+        <Left>1094</Left>
+        <Top>0</Top>
+        <Width>2131</Width>
+        <Height>395</Height>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>Segoe UI</Name>
+          <Size>12</Size>
+        </Font>
+        <Text>
+          <Expression>STORE</Expression>
+        </Text>
+      </TextField>
+    </Fields>
+  </Report>
+</Reports>

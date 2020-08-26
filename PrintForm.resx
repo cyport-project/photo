@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="PrintReport.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>26, 16</value>
+  </metadata>
+  <data name="PrintReport.ReportDefinition" xml:space="preserve">
+    <value>&lt;Report ref="1"&gt;&lt;Name&gt;Costume_reservation_list&lt;/Name&gt;&lt;DataSourceName&gt;Main&lt;/DataSourceName&gt;&lt;OnOpen&gt;' -- style script start
+_styleCtr = 0
+' -- style script end
+&lt;/OnOpen&gt;&lt;ReportInfo&gt;&lt;Author&gt;T_hira1048&lt;/Author&gt;&lt;/ReportInfo&gt;&lt;Layout&gt;&lt;Width&gt;9359&lt;/Width&gt;&lt;Orientation&gt;Portrait&lt;/Orientation&gt;&lt;/Layout&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;/Font&gt;&lt;DataSources&gt;&lt;DataSource&gt;&lt;Name&gt;Main&lt;/Name&gt;&lt;DataProvider&gt;SqlServerCe4_0&lt;/DataProvider&gt;&lt;ConnectionString&gt;Data Source=Asset\ReportData.sdf&lt;/ConnectionString&gt;&lt;RecordSource&gt;Costume_reservation_list&lt;/RecordSource&gt;&lt;RecordSourceType&gt;TableDirect&lt;/RecordSourceType&gt;&lt;/DataSource&gt;&lt;/DataSources&gt;&lt;Groups&gt;&lt;Group&gt;&lt;Name&gt;予約年月日&lt;/Name&gt;&lt;GroupBy&gt;ReceiptDate&lt;/GroupBy&gt;&lt;Sort&gt;Ascending&lt;/Sort&gt;&lt;KeepTogether&gt;KeepFirstDetail&lt;/KeepTogether&gt;&lt;OutlineLabel&gt;&lt;Expression&gt;ReceiptDate&lt;/Expression&gt;&lt;/OutlineLabel&gt;&lt;/Group&gt;&lt;Group&gt;&lt;Name&gt;店舗名称&lt;/Name&gt;&lt;GroupBy&gt;StoreName&lt;/GroupBy&gt;&lt;Sort&gt;Ascending&lt;/Sort&gt;&lt;KeepTogether&gt;KeepFirstDetail&lt;/KeepTogether&gt;&lt;OutlineLabel&gt;&lt;Expression&gt;StoreName&lt;/Expression&gt;&lt;/OutlineLabel&gt;&lt;/Group&gt;&lt;/Groups&gt;&lt;Sections&gt;&lt;Section&gt;&lt;Name&gt;Detail&lt;/Name&gt;&lt;Background type="Solid"&gt;&lt;Color&gt;FFFFFFFF&lt;/Color&gt;&lt;/Background&gt;&lt;SubSections&gt;&lt;SubSection&gt;&lt;Height&gt;1745&lt;/Height&gt;&lt;/SubSection&gt;&lt;/SubSections&gt;&lt;Type&gt;Detail&lt;/Type&gt;&lt;OnPrint&gt;' -- style script start
+detail.BackColor = iif(_styleCtr mod 2 = 0, rgb(255,255,255),rgb(240,240,240))
+_styleCtr = _styleCtr + 1
+' -- style script end
+&lt;/OnPrint&gt;&lt;/Section&gt;&lt;Section&gt;&lt;Name&gt;Header&lt;/Name&gt;&lt;Background type="Solid"&gt;&lt;Color&gt;FFFFFFFF&lt;/Color&gt;&lt;/Background&gt;&lt;SubSections&gt;&lt;SubSection /&gt;&lt;/SubSections&gt;&lt;Type&gt;Header&lt;/Type&gt;&lt;/Section&gt;&lt;Section&gt;&lt;Name&gt;Footer&lt;/Name&gt;&lt;SubSections&gt;&lt;SubSection /&gt;&lt;/SubSections&gt;&lt;Type&gt;Footer&lt;/Type&gt;&lt;/Section&gt;&lt;Section&gt;&lt;Name&gt;PageHeader&lt;/Name&gt;&lt;Background type="Solid"&gt;&lt;Color&gt;FFC2DCFF&lt;/Color&gt;&lt;/Background&gt;&lt;SubSections&gt;&lt;SubSection&gt;&lt;Background type="Solid"&gt;&lt;Color&gt;FFFFFFFF&lt;/Color&gt;&lt;/Background&gt;&lt;Height&gt;345&lt;/Height&gt;&lt;/SubSection&gt;&lt;/SubSections&gt;&lt;Type&gt;PageHeader&lt;/Type&gt;&lt;/Section&gt;&lt;Section&gt;&lt;Name&gt;PageFooter&lt;/Name&gt;&lt;Background type="Solid"&gt;&lt;Color&gt;FFFFFFFF&lt;/Color&gt;&lt;/Background&gt;&lt;SubSections&gt;&lt;SubSection /&gt;&lt;/SubSections&gt;&lt;Type&gt;PageFooter&lt;/Type&gt;&lt;/Section&gt;&lt;Section&gt;&lt;Name&gt;GroupHeader0&lt;/Name&gt;&lt;Background type="Solid"&gt;&lt;Color&gt;FFFFFFFF&lt;/Color&gt;&lt;/Background&gt;&lt;SubSections&gt;&lt;SubSection&gt;&lt;Height&gt;465&lt;/Height&gt;&lt;/SubSection&gt;&lt;/SubSections&gt;&lt;Type&gt;GroupHeader1&lt;/Type&gt;&lt;Repeat&gt;true&lt;/Repeat&gt;&lt;/Section&gt;&lt;Section&gt;&lt;Name&gt;GroupFooter0&lt;/Name&gt;&lt;SubSections&gt;&lt;SubSection /&gt;&lt;/SubSections&gt;&lt;Type&gt;GroupFooter1&lt;/Type&gt;&lt;/Section&gt;&lt;Section&gt;&lt;Name&gt;GroupHeader1&lt;/Name&gt;&lt;Background type="Solid"&gt;&lt;Color&gt;FFFFFFFF&lt;/Color&gt;&lt;/Background&gt;&lt;SubSections&gt;&lt;SubSection&gt;&lt;Height&gt;1380&lt;/Height&gt;&lt;/SubSection&gt;&lt;/SubSections&gt;&lt;Type&gt;GroupHeader2&lt;/Type&gt;&lt;Repeat&gt;true&lt;/Repeat&gt;&lt;/Section&gt;&lt;Section&gt;&lt;Name&gt;GroupFooter1&lt;/Name&gt;&lt;SubSections&gt;&lt;SubSection /&gt;&lt;/SubSections&gt;&lt;Type&gt;GroupFooter2&lt;/Type&gt;&lt;/Section&gt;&lt;/Sections&gt;&lt;Fields&gt;&lt;TextField&gt;&lt;Name&gt;お客様名Lbl&lt;/Name&gt;&lt;Section&gt;GroupHeader2&lt;/Section&gt;&lt;Left&gt;6435&lt;/Left&gt;&lt;Top&gt;865&lt;/Top&gt;&lt;Width&gt;1983&lt;/Width&gt;&lt;Height&gt;350&lt;/Height&gt;&lt;Align&gt;LeftBottom&lt;/Align&gt;&lt;WordWrap&gt;false&lt;/WordWrap&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;Bold&gt;true&lt;/Bold&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Value sys="string"&gt;お客様名&lt;/Value&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;TextField&gt;&lt;Name&gt;衣裳コードLbl&lt;/Name&gt;&lt;Section&gt;GroupHeader2&lt;/Section&gt;&lt;Left&gt;0&lt;/Left&gt;&lt;Top&gt;865&lt;/Top&gt;&lt;Width&gt;1121&lt;/Width&gt;&lt;Height&gt;350&lt;/Height&gt;&lt;Align&gt;LeftBottom&lt;/Align&gt;&lt;WordWrap&gt;false&lt;/WordWrap&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;Bold&gt;true&lt;/Bold&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Value sys="string"&gt;衣裳コード&lt;/Value&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;TextField&gt;&lt;Name&gt;性別Lbl&lt;/Name&gt;&lt;Section&gt;GroupHeader2&lt;/Section&gt;&lt;Left&gt;8418&lt;/Left&gt;&lt;Top&gt;865&lt;/Top&gt;&lt;Width&gt;941&lt;/Width&gt;&lt;Height&gt;350&lt;/Height&gt;&lt;Align&gt;LeftBottom&lt;/Align&gt;&lt;WordWrap&gt;false&lt;/WordWrap&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;Bold&gt;true&lt;/Bold&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Value sys="string"&gt;性別&lt;/Value&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;TextField&gt;&lt;Name&gt;予約年月日時分Lbl&lt;/Name&gt;&lt;Section&gt;GroupHeader2&lt;/Section&gt;&lt;Left&gt;2242&lt;/Left&gt;&lt;Top&gt;865&lt;/Top&gt;&lt;Width&gt;1343&lt;/Width&gt;&lt;Height&gt;350&lt;/Height&gt;&lt;Align&gt;LeftBottom&lt;/Align&gt;&lt;WordWrap&gt;false&lt;/WordWrap&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;Bold&gt;true&lt;/Bold&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Value sys="string"&gt;予約年月日時分&lt;/Value&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;TextField&gt;&lt;Name&gt;施設名Lbl&lt;/Name&gt;&lt;Section&gt;GroupHeader2&lt;/Section&gt;&lt;Left&gt;1121&lt;/Left&gt;&lt;Top&gt;865&lt;/Top&gt;&lt;Width&gt;1121&lt;/Width&gt;&lt;Height&gt;350&lt;/Height&gt;&lt;Align&gt;LeftBottom&lt;/Align&gt;&lt;WordWrap&gt;false&lt;/WordWrap&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;Bold&gt;true&lt;/Bold&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Value sys="string"&gt;施設名&lt;/Value&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;TextField&gt;&lt;Name&gt;お客様名Ctl&lt;/Name&gt;&lt;Section&gt;Detail&lt;/Section&gt;&lt;Left&gt;6435&lt;/Left&gt;&lt;Top&gt;280&lt;/Top&gt;&lt;Width&gt;1983&lt;/Width&gt;&lt;Height&gt;280&lt;/Height&gt;&lt;Align&gt;LeftTop&lt;/Align&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Expression&gt;CustomerName&lt;/Expression&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;TextField&gt;&lt;Name&gt;お客様名カナ漢字Ctl&lt;/Name&gt;&lt;Section&gt;Detail&lt;/Section&gt;&lt;Left&gt;6435&lt;/Left&gt;&lt;Top&gt;0&lt;/Top&gt;&lt;Width&gt;1983&lt;/Width&gt;&lt;Height&gt;280&lt;/Height&gt;&lt;Align&gt;LeftTop&lt;/Align&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Expression&gt;CostumerNamekana&lt;/Expression&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;TextField&gt;&lt;Name&gt;衣裳コードCtl&lt;/Name&gt;&lt;Section&gt;Detail&lt;/Section&gt;&lt;Left&gt;0&lt;/Left&gt;&lt;Top&gt;0&lt;/Top&gt;&lt;Width&gt;1121&lt;/Width&gt;&lt;Height&gt;280&lt;/Height&gt;&lt;Align&gt;LeftTop&lt;/Align&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Expression&gt;CostumeCode&lt;/Expression&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;TextField&gt;&lt;Name&gt;性別Ctl&lt;/Name&gt;&lt;Section&gt;Detail&lt;/Section&gt;&lt;Left&gt;8418&lt;/Left&gt;&lt;Top&gt;0&lt;/Top&gt;&lt;Width&gt;941&lt;/Width&gt;&lt;Height&gt;280&lt;/Height&gt;&lt;Align&gt;LeftTop&lt;/Align&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Expression&gt;Sex&lt;/Expression&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;TextField&gt;&lt;Name&gt;備考Ctl&lt;/Name&gt;&lt;Section&gt;Detail&lt;/Section&gt;&lt;Left&gt;2242&lt;/Left&gt;&lt;Top&gt;560&lt;/Top&gt;&lt;Width&gt;7117&lt;/Width&gt;&lt;Height&gt;1110&lt;/Height&gt;&lt;Align&gt;LeftTop&lt;/Align&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Expression&gt;Remarks&lt;/Expression&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;TextField&gt;&lt;Name&gt;予約年月日時分Ctl&lt;/Name&gt;&lt;Section&gt;Detail&lt;/Section&gt;&lt;Left&gt;2242&lt;/Left&gt;&lt;Top&gt;0&lt;/Top&gt;&lt;Width&gt;4193&lt;/Width&gt;&lt;Height&gt;280&lt;/Height&gt;&lt;Align&gt;LeftTop&lt;/Align&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Expression&gt;ReservationDate&lt;/Expression&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;TextField&gt;&lt;Name&gt;施設名Ctl&lt;/Name&gt;&lt;Section&gt;Detail&lt;/Section&gt;&lt;Left&gt;1121&lt;/Left&gt;&lt;Top&gt;0&lt;/Top&gt;&lt;Width&gt;1121&lt;/Width&gt;&lt;Height&gt;280&lt;/Height&gt;&lt;Align&gt;LeftTop&lt;/Align&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Expression&gt;FacilityName&lt;/Expression&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;TextField&gt;&lt;Name&gt;Field2&lt;/Name&gt;&lt;Section&gt;Detail&lt;/Section&gt;&lt;Left&gt;1301&lt;/Left&gt;&lt;Top&gt;560&lt;/Top&gt;&lt;Width&gt;941&lt;/Width&gt;&lt;Height&gt;270&lt;/Height&gt;&lt;Text&gt;&lt;Value sys="string"&gt;備考&lt;/Value&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;TextField&gt;&lt;Name&gt;店舗名称Lbl&lt;/Name&gt;&lt;Section&gt;GroupHeader2&lt;/Section&gt;&lt;Left&gt;50&lt;/Left&gt;&lt;Top&gt;0&lt;/Top&gt;&lt;Width&gt;3000&lt;/Width&gt;&lt;Height&gt;350&lt;/Height&gt;&lt;Align&gt;LeftBottom&lt;/Align&gt;&lt;WordWrap&gt;false&lt;/WordWrap&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;Bold&gt;true&lt;/Bold&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Expression&gt;StoreName&lt;/Expression&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;ShapeField&gt;&lt;Name&gt;Field3&lt;/Name&gt;&lt;Background type="Solid"&gt;&lt;Color&gt;FF000000&lt;/Color&gt;&lt;/Background&gt;&lt;Section&gt;GroupHeader2&lt;/Section&gt;&lt;Left&gt;45&lt;/Left&gt;&lt;Top&gt;1320&lt;/Top&gt;&lt;Width&gt;9314&lt;/Width&gt;&lt;Height&gt;5&lt;/Height&gt;&lt;/ShapeField&gt;&lt;ImageField&gt;&lt;Name&gt;Field4&lt;/Name&gt;&lt;Section&gt;Detail&lt;/Section&gt;&lt;Left&gt;135&lt;/Left&gt;&lt;Top&gt;545&lt;/Top&gt;&lt;Width&gt;986&lt;/Width&gt;&lt;Height&gt;780&lt;/Height&gt;&lt;PictureScale&gt;Stretch&lt;/PictureScale&gt;&lt;Picture&gt;&lt;Expression&gt;=Folder&lt;/Expression&gt;&lt;/Picture&gt;&lt;/ImageField&gt;&lt;TextField&gt;&lt;Name&gt;ftrRight&lt;/Name&gt;&lt;Section&gt;PageHeader&lt;/Section&gt;&lt;Left&gt;6236&lt;/Left&gt;&lt;Top&gt;0&lt;/Top&gt;&lt;Width&gt;3123&lt;/Width&gt;&lt;Height&gt;300&lt;/Height&gt;&lt;Align&gt;RightTop&lt;/Align&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;Size&gt;8&lt;/Size&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Expression&gt;"ページ " &amp;amp; [Page] &amp;amp; " / " &amp;amp; [Pages]&lt;/Expression&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;TextField&gt;&lt;Name&gt;予約年月日Lbl&lt;/Name&gt;&lt;Section&gt;GroupHeader1&lt;/Section&gt;&lt;Left&gt;0&lt;/Left&gt;&lt;Top&gt;0&lt;/Top&gt;&lt;Width&gt;3330&lt;/Width&gt;&lt;Height&gt;405&lt;/Height&gt;&lt;Align&gt;LeftBottom&lt;/Align&gt;&lt;WordWrap&gt;false&lt;/WordWrap&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;Size&gt;16&lt;/Size&gt;&lt;Bold&gt;true&lt;/Bold&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Expression&gt;ReceiptDate&lt;/Expression&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;TextField&gt;&lt;Name&gt;Field1&lt;/Name&gt;&lt;Section&gt;GroupHeader1&lt;/Section&gt;&lt;Left&gt;3330&lt;/Left&gt;&lt;Top&gt;0&lt;/Top&gt;&lt;Width&gt;3435&lt;/Width&gt;&lt;Height&gt;405&lt;/Height&gt;&lt;Align&gt;LeftTop&lt;/Align&gt;&lt;Font&gt;&lt;Name&gt;Segoe UI&lt;/Name&gt;&lt;Size&gt;16&lt;/Size&gt;&lt;/Font&gt;&lt;Text&gt;&lt;Value sys="string"&gt;の衣装予約一覧&lt;/Value&gt;&lt;/Text&gt;&lt;/TextField&gt;&lt;/Fields&gt;&lt;/Report&gt;</value>
+  </data>
+</root>

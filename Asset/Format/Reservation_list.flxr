@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+<Reports>
+  <FormatVersion>1.0 1.0.0.0</FormatVersion>
+  <Report ref="1">
+    <Name>Reservation_list レポート</Name>
+    <DataSourceName>Main</DataSourceName>
+    <OnOpen>' -- style script start
+_styleCtr = 0
+' -- style script end
+</OnOpen>
+    <ReportInfo>
+      <Author>adcta</Author>
+    </ReportInfo>
+    <Layout>
+      <Width>10584</Width>
+      <Orientation>Portrait</Orientation>
+    </Layout>
+    <Font>
+      <Name>Segoe UI</Name>
+    </Font>
+    <DataSources>
+      <DataSource>
+        <Name>Main</Name>
+        <DataProvider>SqlServerCe4_0</DataProvider>
+        <ConnectionString>Data Source=.\Asset\ReportData.sdf</ConnectionString>
+        <RecordSource>Reservation_list</RecordSource>
+        <RecordSourceType>TableDirect</RecordSourceType>
+      </DataSource>
+    </DataSources>
+    <Groups>
+      <Group>
+        <Name>予約年月日</Name>
+        <GroupBy>ReservationDate</GroupBy>
+        <Sort>Ascending</Sort>
+        <KeepTogether>KeepFirstDetail</KeepTogether>
+        <OutlineLabel>
+          <Expression>ReservationDate</Expression>
+        </OutlineLabel>
+      </Group>
+      <Group>
+        <Name>店舗名称</Name>
+        <GroupBy>Store</GroupBy>
+        <Sort>Ascending</Sort>
+        <KeepTogether>KeepFirstDetail</KeepTogether>
+        <OutlineLabel>
+          <Expression>Store</Expression>
+        </OutlineLabel>
+      </Group>
+    </Groups>
+    <Sections>
+      <Section>
+        <Name>Detail</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection>
+            <Height>3150</Height>
+          </SubSection>
+        </SubSections>
+        <Type>Detail</Type>
+        <OnPrint>' -- style script start
+detail.BackColor = iif(_styleCtr mod 2 = 0, rgb(255,255,255),rgb(240,240,240))
+_styleCtr = _styleCtr + 1
+' -- style script end
+</OnPrint>
+      </Section>
+      <Section>
+        <Name>Header</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>Header</Type>
+      </Section>
+      <Section>
+        <Name>Footer</Name>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>Footer</Type>
+      </Section>
+      <Section>
+        <Name>PageHeader</Name>
+        <Background type="Solid">
+          <Color>FFC2DCFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection>
+            <Background type="Solid">
+              <Color>FFFFFFFF</Color>
+            </Background>
+            <Height>360</Height>
+          </SubSection>
+        </SubSections>
+        <Type>PageHeader</Type>
+      </Section>
+      <Section>
+        <Name>PageFooter</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>PageFooter</Type>
+      </Section>
+      <Section>
+        <Name>GroupHeader0</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection>
+            <Height>660</Height>
+          </SubSection>
+        </SubSections>
+        <Type>GroupHeader1</Type>
+        <Repeat>true</Repeat>
+      </Section>
+      <Section>
+        <Name>GroupFooter0</Name>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>GroupFooter1</Type>
+      </Section>
+      <Section>
+        <Name>GroupHeader1</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <SubSections>
+          <SubSection>
+            <Height>390</Height>
+          </SubSection>
+        </SubSections>
+        <Type>GroupHeader2</Type>
+        <Repeat>true</Repeat>
+      </Section>
+      <Section>
+        <Name>GroupFooter1</Name>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>GroupFooter2</Type>
+      </Section>
+    </Sections>
+    <Fields>
+      <TextField>
+        <Name>店舗名称Ctl</Name>
+        <Background type="Solid">
+          <Color>FFFFFFFF</Color>
+        </Background>
+        <Section>GroupHeader2</Section>
+        <Left>50</Left>
+        <Top>0</Top>
+        <Width>9021</Width>
+        <Height>350</Height>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+          <Bold>true</Bold>
+        </Font>
+        <Text>
+          <Expression>Store</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>お客様名Ctl</Name>
+        <Section>Detail</Section>
+        <Left>2848</Left>
+        <Top>720</Top>
+        <Width>2757</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>CustomerName</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>撮影目的Ctl</Name>
+        <Section>Detail</Section>
+        <Left>6747</Left>
+        <Top>710</Top>
+        <Width>2286</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>ShootingPurpose</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>施設名Ctl</Name>
+        <Section>Detail</Section>
+        <Left>1642</Left>
+        <Top>720</Top>
+        <Width>1152</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>Facility</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>性別Ctl</Name>
+        <Section>Detail</Section>
+        <Left>5785</Left>
+        <Top>710</Top>
+        <Width>742</Width>
+        <Height>280</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>Sex</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>備考Ctl</Name>
+        <Section>Detail</Section>
+        <Left>3015</Left>
+        <Top>1585</Top>
+        <Width>6056</Width>
+        <Height>1535</Height>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>Remarks</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>予約開始時分　予約終了時分Ctl</Name>
+        <Section>Detail</Section>
+        <Left>0</Left>
+        <Top>710</Top>
+        <Width>1680</Width>
+        <Height>290</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>ReservationTime</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>予約年月日Ctl</Name>
+        <Section>GroupHeader1</Section>
+        <Left>50</Left>
+        <Top>90</Top>
+        <Width>3975</Width>
+        <Height>480</Height>
+        <Align>LeftBottom</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>16</Size>
+          <Bold>true</Bold>
+        </Font>
+        <Text>
+          <Expression>ReservationDate&amp;"の予約一覧"</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>衣裳コードLbl</Name>
+        <Section>Detail</Section>
+        <Left>1683</Left>
+        <Top>1064</Top>
+        <Width>1152</Width>
+        <Height>350</Height>
+        <Align>LeftBottom</Align>
+        <WordWrap>false</WordWrap>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Value sys="string">衣裳コード</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>衣裳コードCtl</Name>
+        <Section>Detail</Section>
+        <Left>3033</Left>
+        <Top>1134</Top>
+        <Width>1525</Width>
+        <Height>280</Height>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>CostumeCode </Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>備考Lbl</Name>
+        <Section>Detail</Section>
+        <Left>1701</Left>
+        <Top>1585</Top>
+        <Width>1152</Width>
+        <Height>350</Height>
+        <WordWrap>false</WordWrap>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Value sys="string">備考</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>撮影目的Lbl</Name>
+        <Section>Detail</Section>
+        <Left>6785</Left>
+        <Top>10</Top>
+        <Width>1152</Width>
+        <Height>350</Height>
+        <Align>LeftBottom</Align>
+        <WordWrap>false</WordWrap>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Value sys="string">撮影目的</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>お客様名Lbl</Name>
+        <Section>Detail</Section>
+        <Left>2848</Left>
+        <Top>0</Top>
+        <Width>1206</Width>
+        <Height>350</Height>
+        <Align>LeftBottom</Align>
+        <WordWrap>false</WordWrap>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Value sys="string">お客様名</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>性別Lbl</Name>
+        <Section>Detail</Section>
+        <Left>5785</Left>
+        <Top>0</Top>
+        <Width>742</Width>
+        <Height>350</Height>
+        <Align>LeftBottom</Align>
+        <WordWrap>false</WordWrap>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Value sys="string">性別</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>施設名Lbl</Name>
+        <Section>Detail</Section>
+        <Left>1642</Left>
+        <Top>0</Top>
+        <Width>1152</Width>
+        <Height>350</Height>
+        <Align>LeftBottom</Align>
+        <WordWrap>false</WordWrap>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Value sys="string">施設名</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>予約開始時分　予約終了時分Lbl</Name>
+        <Section>Detail</Section>
+        <Left>13</Left>
+        <Top>0</Top>
+        <Width>1152</Width>
+        <Height>350</Height>
+        <Align>LeftBottom</Align>
+        <WordWrap>false</WordWrap>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Value sys="string">予約時間</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>Field1</Name>
+        <Section>Detail</Section>
+        <Left>2848</Left>
+        <Top>495</Top>
+        <Width>2757</Width>
+        <Height>215</Height>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>8</Size>
+        </Font>
+        <Text>
+          <Expression>CustomerNameKana</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>ftrRight</Name>
+        <Section>PageHeader</Section>
+        <Left>4558</Left>
+        <Top>0</Top>
+        <Width>4512.75590551181</Width>
+        <Height>300</Height>
+        <Align>RightTop</Align>
+        <ForeColor>FF204D89</ForeColor>
+        <Font>
+          <Name>Segoe UI</Name>
+        </Font>
+        <Text>
+          <Expression>"ページ " &amp; [Page] &amp; " / " &amp; [Pages]</Expression>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>Field2</Name>
+        <Section>Detail</Section>
+        <Left>4558</Left>
+        <Top>1134</Top>
+        <Width>4513</Width>
+        <Height>302</Height>
+        <Align>LeftTop</Align>
+        <Font>
+          <Name>ＭＳ 明朝</Name>
+          <Size>10</Size>
+        </Font>
+        <Text>
+          <Expression>CostumeReservationDate</Expression>
+        </Text>
+      </TextField>
+      <ShapeField>
+        <Name>Field3</Name>
+        <Border>
+          <Left>
+            <Style>Solid</Style>
+            <Width>10</Width>
+          </Left>
+          <Top>
+            <Style>Solid</Style>
+            <Width>10</Width>
+          </Top>
+          <Right>
+            <Style>Solid</Style>
+            <Width>10</Width>
+          </Right>
+          <Bottom>
+            <Style>Solid</Style>
+            <Width>10</Width>
+          </Bottom>
+        </Border>
+        <Background type="Solid">
+          <Color>FF000000</Color>
+        </Background>
+        <Section>Detail</Section>
+        <Left>50</Left>
+        <Top>440</Top>
+        <Width>9071</Width>
+        <Height>0</Height>
+      </ShapeField>
+    </Fields>
+  </Report>
+</Reports>

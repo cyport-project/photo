@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DF949D4-9BBE-4B5C-A560-B5CB4B467F78}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>写真館システム</RootNamespace>
+    <AssemblyName>写真館システム</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Asset\フォト君.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.C1Pdf.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=79882d576c6336da" />
+    <Reference Include="C1.C1Report.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=594a0605db190bb9, processorArchitecture=MSIL" />
+    <Reference Include="C1.C1Word.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.C1Word.4.Design, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.C1Zip.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=79882d576c6336da" />
+    <Reference Include="C1.Win.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
+    <Reference Include="C1.Win.BarCode.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=79882d576c6336da" />
+    <Reference Include="C1.Win.Bitmap.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
+    <Reference Include="C1.Win.C1Chart.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=a22e16972c085838" />
+    <Reference Include="C1.Win.C1Chart3D.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=a22e16972c085838" />
+    <Reference Include="C1.Win.C1Command.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=e808566f358766d8" />
+    <Reference Include="C1.Win.C1Document.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
+    <Reference Include="C1.Win.C1DX.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Input.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1InputPanel.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=79882d576c6336da" />
+    <Reference Include="C1.Win.C1Report.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=41780e2fc605e636, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Ribbon.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=79882d576c6336da" />
+    <Reference Include="C1.Win.C1Schedule.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Sizer.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1SuperTooltip.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1TouchToolKit.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=5e531fc0479701e7, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.Calendar.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.FlexChart.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=3aa2920c09e0aefd" />
+    <Reference Include="C1.Win.FlexReport.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.FlexViewer.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.ImportServices.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.1.3\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework6.Npgsql, Version=3.1.1.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework6.Npgsql.3.1.1\lib\net45\EntityFramework6.Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Npgsql, Version=4.0.2.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.4.0.2\lib\net451\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Asset\Costume_timelineDataSet.cs">
+      <DependentUpon>Costume_timelineDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Asset\Costume_timelineDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Costume_timelineDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Asset\Reservation_timetableDataSet.cs">
+      <DependentUpon>Reservation_timetableDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Costume_master.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Costume_master.Designer.cs">
+      <DependentUpon>Costume_master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Costume_timetable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Costume_timetable.Designer.cs">
+      <DependentUpon>Costume_timetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Costume_reservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Costume_reservation.Designer.cs">
+      <DependentUpon>Costume_reservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Costume_reservation_search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Costume_reservation_search.Designer.cs">
+      <DependentUpon>Costume_reservation_search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Costume_search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Costume_search.Designer.cs">
+      <DependentUpon>Costume_search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer_search.Designer.cs">
+      <DependentUpon>Customer_search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\base_table.cs" />
+    <Compile Include="DB\calendar_information_table.cs" />
+    <Compile Include="DB\login_sql.cs" />
+    <Compile Include="DB\progress_table.cs" />
+    <Compile Include="DB\payment_management_table.cs" />
+    <Compile Include="DB\constant_table.cs" />
+    <Compile Include="DB\task_table.cs" />
+    <Compile Include="DB\sales_statement_table.cs" />
+    <Compile Include="DB\product_class_table.cs" />
+    <Compile Include="DB\product_table.cs" />
+    <Compile Include="DB\family_table.cs" />
+    <Compile Include="DB\shooting_data_table.cs" />
+    <Compile Include="DB\member_table.cs" />
+    <Compile Include="DB\costume_table.cs" />
+    <Compile Include="DB\sales_management_table.cs" />
+    <Compile Include="DB\selection_table.cs" />
+    <Compile Include="DB\staff_shift_table.cs" />
+    <Compile Include="DB\staff_table.cs" />
+    <Compile Include="DB\costume_reservation_table.cs" />
+    <Compile Include="DB\customer_table.cs" />
+    <Compile Include="DB\facility_reservation_table.cs" />
+    <Compile Include="DB\facility_table.cs" />
+    <Compile Include="DB\reception_table.cs" />
+    <Compile Include="DB\reservation_table.cs" />
+    <Compile Include="DB\store_table.cs" />
+    <Compile Include="DB\tableConnection.cs" />
+    <Compile Include="Facility_master.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Facility_master.Designer.cs">
+      <DependentUpon>Facility_master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rental.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rental.Designer.cs">
+      <DependentUpon>rental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Header_Menu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Header_Menu.Designer.cs">
+      <DependentUpon>Header_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_information.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer_information.Designer.cs">
+      <DependentUpon>Customer_information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_menu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main_menu.Designer.cs">
+      <DependentUpon>Main_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order_entry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order_entry.Designer.cs">
+      <DependentUpon>Order_entry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Photo_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Photo_form.Designer.cs">
+      <DependentUpon>Photo_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Photo_selection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Photo_selection.Designer.cs">
+      <DependentUpon>Photo_selection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintForm.Designer.cs">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Facility_reservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Facility_reservation.Designer.cs">
+      <DependentUpon>Facility_reservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reception.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reception.Designer.cs">
+      <DependentUpon>Reception.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reception_details.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reception_details.Designer.cs">
+      <DependentUpon>Reception_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reception_search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reception_search.Designer.cs">
+      <DependentUpon>Reception_search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation_timetable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reservation_timetable.Designer.cs">
+      <DependentUpon>Reservation_timetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asset\Reservation_timetableDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reservation_timetableDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduled_search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Scheduled_search.Designer.cs">
+      <DependentUpon>Scheduled_search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_master.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Staff_master.Designer.cs">
+      <DependentUpon>Staff_master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_shift.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Staff_shift.Designer.cs">
+      <DependentUpon>Staff_shift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store_calender.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Store_calender.Designer.cs">
+      <DependentUpon>Store_calender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store_master.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Store_master.Designer.cs">
+      <DependentUpon>Store_master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tagControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="tagControl.Designer.cs">
+      <DependentUpon>tagControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlExp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utile\Data.cs" />
+    <Compile Include="Utile\FullScreen.cs" />
+    <Compile Include="Utile\Message.cs" />
+    <Compile Include="Utile\Print.cs" />
+    <Compile Include="Utile\RepoerDB.cs" />
+    <EmbeddedResource Include="Costume_master.resx">
+      <DependentUpon>Costume_master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Costume_timetable.resx">
+      <DependentUpon>Costume_timetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Costume_reservation.resx">
+      <DependentUpon>Costume_reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Costume_reservation_search.resx">
+      <DependentUpon>Costume_reservation_search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Costume_search.resx">
+      <DependentUpon>Costume_search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer_search.resx">
+      <DependentUpon>Customer_search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facility_master.resx">
+      <DependentUpon>Facility_master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Header_Menu.resx">
+      <DependentUpon>Header_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer_information.resx">
+      <DependentUpon>Customer_information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_menu.resx">
+      <DependentUpon>Main_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order_entry.resx">
+      <DependentUpon>Order_entry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photo_form.resx">
+      <DependentUpon>Photo_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photo_selection.resx">
+      <DependentUpon>Photo_selection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintForm.resx">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Facility_reservation.resx">
+      <DependentUpon>Facility_reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reception.resx">
+      <DependentUpon>Reception.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reception_details.resx">
+      <DependentUpon>Reception_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reception_search.resx">
+      <DependentUpon>Reception_search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rental.resx">
+      <DependentUpon>rental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservation_timetable.resx">
+      <DependentUpon>Reservation_timetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduled_search.resx">
+      <DependentUpon>Scheduled_search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_master.resx">
+      <DependentUpon>Staff_master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_shift.resx">
+      <DependentUpon>Staff_shift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Store_calender.resx">
+      <DependentUpon>Store_calender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Store_master.resx">
+      <DependentUpon>Store_master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tagControl.resx">
+      <DependentUpon>tagControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlExp.resx">
+      <DependentUpon>UserControlExp.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Asset\Costume_timelineDataSet.xsc">
+      <DependentUpon>Costume_timelineDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Asset\Costume_timelineDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Costume_timelineDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Asset\Costume_timelineDataSet.xss">
+      <DependentUpon>Costume_timelineDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Asset\Format\Booking_schedule.flxr">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Asset\Format\Costume_reservation_list.flxr">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Asset\Format\Customer_infomation.flxr">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Asset\Format\Exchange_history.flxr">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Asset\Format\Order_list.flxr">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Asset\Format\Receipt.flxr">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Asset\Format\Reception_card.flxr">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Asset\Format\Reservation_list.flxr">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Asset\Format\salesSlip.flxr">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Asset\Format\StaffShift.flxr" />
+    <None Include="Asset\KEN_ALL.CSV">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\写真館システム.Utile.Data+就業区分.datasource" />
+    <None Include="Properties\DataSources\写真館システム.Utile.Data+施設名.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Asset\Reservation_timetableDataSet.xsc">
+      <DependentUpon>Reservation_timetableDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Asset\Reservation_timetableDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Reservation_timetableDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Asset\Reservation_timetableDataSet.xss">
+      <DependentUpon>Reservation_timetableDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Asset\Costume_timetable.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Asset\Costume_timetable_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Costume_timetable.mdf</DependentUpon>
+    </Content>
+    <Content Include="Asset\Image\forder.png" />
+    <Content Include="Asset\Image\print.png" />
+    <Content Include="Asset\Image\turnR.png" />
+    <Content Include="Asset\Image\hand.png" />
+    <Content Include="Asset\Image\turnL.png" />
+    <Content Include="Asset\ReportData.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Asset\Reservation_timetable.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Asset\Reservation_timetable_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Reservation_timetable.mdf</DependentUpon>
+    </Content>
+    <Content Include="Asset\Image\customer.png" />
+    <Content Include="Asset\Image\staff.png" />
+    <Content Include="Asset\フォト君.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\カメラアイコン8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 および x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
