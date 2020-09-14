@@ -79,7 +79,7 @@ namespace 写真館システム
                 this.BackgroundImage = System.Drawing.Image.FromFile(biPath);
             else
             {
-                Message.showMessageOK("I99000");
+                //Message.showMessageOK("I99000");
             }
 
             //アイコンの設定
