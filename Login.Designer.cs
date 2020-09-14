@@ -31,7 +31,6 @@ namespace 写真館システム
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.b_login = new System.Windows.Forms.Button();
@@ -126,7 +125,7 @@ namespace 写真館システム
             this.tableLayoutPanel2.Controls.Add(this.label2, 10, 14);
             this.tableLayoutPanel2.Controls.Add(this.l_login, 10, 11);
             this.tableLayoutPanel2.Controls.Add(this.t_login, 15, 11);
-            this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 12, 4);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 9, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(13, 10);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -246,12 +245,12 @@ namespace 写真館システム
             // 
             // pictureBox1
             // 
-            this.tableLayoutPanel2.SetColumnSpan(this.pictureBox1, 10);
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(411, 75);
+            this.tableLayoutPanel2.SetColumnSpan(this.pictureBox1, 14);
+            this.pictureBox1.Image = global::写真館システム.Properties.Resources.photokunlogo;
+            this.pictureBox1.Location = new System.Drawing.Point(309, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.tableLayoutPanel2.SetRowSpan(this.pictureBox1, 4);
-            this.pictureBox1.Size = new System.Drawing.Size(334, 66);
+            this.tableLayoutPanel2.SetRowSpan(this.pictureBox1, 9);
+            this.pictureBox1.Size = new System.Drawing.Size(470, 150);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 

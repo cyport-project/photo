@@ -354,10 +354,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.b_image_select3, 2);
-            this.b_image_select3.Location = new System.Drawing.Point(918, 130);
-            this.b_image_select3.Margin = new System.Windows.Forms.Padding(0);
+            this.b_image_select3.Location = new System.Drawing.Point(923, 130);
+            this.b_image_select3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
             this.b_image_select3.Name = "b_image_select3";
-            this.b_image_select3.Size = new System.Drawing.Size(68, 13);
+            this.tableLayoutPanel2.SetRowSpan(this.b_image_select3, 2);
+            this.b_image_select3.Size = new System.Drawing.Size(58, 21);
             this.b_image_select3.TabIndex = 31;
             this.b_image_select3.Text = "参照";
             this.b_image_select3.UseVisualStyleBackColor = true;
@@ -369,10 +370,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.b_image_select2, 2);
-            this.b_image_select2.Location = new System.Drawing.Point(918, 104);
-            this.b_image_select2.Margin = new System.Windows.Forms.Padding(0);
+            this.b_image_select2.Location = new System.Drawing.Point(923, 104);
+            this.b_image_select2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
             this.b_image_select2.Name = "b_image_select2";
-            this.b_image_select2.Size = new System.Drawing.Size(68, 13);
+            this.tableLayoutPanel2.SetRowSpan(this.b_image_select2, 2);
+            this.b_image_select2.Size = new System.Drawing.Size(58, 21);
             this.b_image_select2.TabIndex = 30;
             this.b_image_select2.Text = "参照";
             this.b_image_select2.UseVisualStyleBackColor = true;
@@ -1042,10 +1044,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.b_image_select1, 2);
-            this.b_image_select1.Location = new System.Drawing.Point(918, 78);
-            this.b_image_select1.Margin = new System.Windows.Forms.Padding(0);
+            this.b_image_select1.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.b_image_select1.Location = new System.Drawing.Point(923, 78);
+            this.b_image_select1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
             this.b_image_select1.Name = "b_image_select1";
-            this.b_image_select1.Size = new System.Drawing.Size(68, 13);
+            this.tableLayoutPanel2.SetRowSpan(this.b_image_select1, 2);
+            this.b_image_select1.Size = new System.Drawing.Size(58, 21);
             this.b_image_select1.TabIndex = 29;
             this.b_image_select1.Text = "参照";
             this.b_image_select1.UseVisualStyleBackColor = true;
@@ -1057,10 +1061,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.b_image_select4, 2);
-            this.b_image_select4.Location = new System.Drawing.Point(918, 156);
-            this.b_image_select4.Margin = new System.Windows.Forms.Padding(0);
+            this.b_image_select4.Location = new System.Drawing.Point(923, 156);
+            this.b_image_select4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
             this.b_image_select4.Name = "b_image_select4";
-            this.b_image_select4.Size = new System.Drawing.Size(68, 13);
+            this.tableLayoutPanel2.SetRowSpan(this.b_image_select4, 2);
+            this.b_image_select4.Size = new System.Drawing.Size(58, 21);
             this.b_image_select4.TabIndex = 32;
             this.b_image_select4.Text = "参照";
             this.b_image_select4.UseVisualStyleBackColor = true;
