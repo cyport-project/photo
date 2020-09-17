@@ -34,6 +34,7 @@ namespace 写真館システム
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.t_name = new System.Windows.Forms.TextBox();
             this.t_name_kana = new System.Windows.Forms.TextBox();
             this.l_Last_use_store = new System.Windows.Forms.Label();
@@ -132,7 +133,6 @@ namespace 写真館システム
             this.b_touroku = new System.Windows.Forms.Button();
             this.b_delete = new System.Windows.Forms.Button();
             this.b_Reception = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -291,6 +291,15 @@ namespace 写真館システム
             this.groupBox1.Size = new System.Drawing.Size(938, 113);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(7, 81);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 19);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "氏名";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // t_name
             // 
@@ -1243,15 +1252,6 @@ namespace 写真館システム
             this.b_Reception.Text = "受付登録へ";
             this.b_Reception.UseVisualStyleBackColor = true;
             this.b_Reception.Click += new System.EventHandler(this.b_Reception_Click);
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(7, 81);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 19);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "氏名";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Customer_information
             // 

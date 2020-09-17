@@ -504,6 +504,7 @@ namespace 写真館システム
             // d_Shooting_purpose
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.d_Shooting_purpose, 3);
+            this.d_Shooting_purpose.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.d_Shooting_purpose.FormattingEnabled = true;
             this.d_Shooting_purpose.Location = new System.Drawing.Point(272, 493);
             this.d_Shooting_purpose.Margin = new System.Windows.Forms.Padding(0);

@@ -160,7 +160,7 @@ namespace 写真館システム.DB
                     data.start_time = this.start_time;
                     data.status = this.status;
                     data.store_category = this.store_category;
-                    data.store_code = this.store_code;
+                    //data.store_code = this.store_code;
                     data.store_name = this.store_name;
                     data.update_date = this.update_date;
                     data.update_staff = this.update_staff;

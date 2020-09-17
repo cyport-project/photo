@@ -346,35 +346,38 @@ namespace 写真館システム
                 while (dataReader.Read())
                 {
                     var path = System.IO.Path.Combine(Secondary_Select_dir, dataReader["folder_name"].ToString().Trim());
-                    foreach (string p in System.IO.Directory.GetFiles(path, "*", System.IO.SearchOption.AllDirectories))
+                    if (File.Exists(path))
                     {
-                        //サムネイル作成
-                        Size ts = new Size();
-                        PointF tp = new PointF();
-                        Bitmap img = new Bitmap(p);
-                        if (img.Size.Width > img.Size.Height)
+                        foreach (string p in System.IO.Directory.GetFiles(path, "*", System.IO.SearchOption.AllDirectories))
                         {
-                            ts = new Size(img.Size.Width, img.Size.Width);
-                            tp = new PointF(0, (img.Size.Width - img.Size.Height) / 2);
-                        }
-                        else
-                        {
-                            ts = new Size(img.Size.Height, img.Size.Height);
-                            tp = new PointF((img.Size.Height - img.Size.Width) / 2, 0);
-                        }
-                        Bitmap tb = new Bitmap(ts.Width, ts.Height);
-                        Graphics tg = Graphics.FromImage(tb);
-                        tg.Clear(Color.White);
-                        tg.DrawImage(img, tp.X, tp.Y, img.Width, img.Height);
-                        img.Dispose();
-                        tg.Dispose();
+                            //サムネイル作成
+                            Size ts = new Size();
+                            PointF tp = new PointF();
+                            Bitmap img = new Bitmap(p);
+                            if (img.Size.Width > img.Size.Height)
+                            {
+                                ts = new Size(img.Size.Width, img.Size.Width);
+                                tp = new PointF(0, (img.Size.Width - img.Size.Height) / 2);
+                            }
+                            else
+                            {
+                                ts = new Size(img.Size.Height, img.Size.Height);
+                                tp = new PointF((img.Size.Height - img.Size.Width) / 2, 0);
+                            }
+                            Bitmap tb = new Bitmap(ts.Width, ts.Height);
+                            Graphics tg = Graphics.FromImage(tb);
+                            tg.Clear(Color.White);
+                            tg.DrawImage(img, tp.X, tp.Y, img.Width, img.Height);
+                            img.Dispose();
+                            tg.Dispose();
 
-                        this.imageList1.Images.Add("", tb);
-                        tb.Dispose();
+                            this.imageList1.Images.Add("", tb);
+                            tb.Dispose();
 
-                        ListViewItem lvi = new ListViewItem("");
-                        lvi.ImageIndex = index++;
-                        this.listView1.Items.Add(lvi);
+                            ListViewItem lvi = new ListViewItem("");
+                            lvi.ImageIndex = index++;
+                            this.listView1.Items.Add(lvi);
+                        }
                     }
                 }
 

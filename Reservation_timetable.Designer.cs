@@ -636,6 +636,7 @@ namespace 写真館システム
             // 
             // 
             this.c1Schedule1.DataStorage.ResourceStorage.Mappings.TextMapping.MappingName = "ResourceName";
+            this.c1Schedule1.EditOptions = C1.Win.C1Schedule.EditOptions.None;
             this.c1Schedule1.EmptyGroupName = "美容室";
             this.c1Schedule1.GroupBy = "Contact";
             this.c1Schedule1.GroupPageSize = 100;
@@ -670,6 +671,7 @@ namespace 写真館システム
             this.c1Schedule1.ShowContextMenu = false;
             this.c1Schedule1.ShowReminderForm = false;
             this.c1Schedule1.ShowTitle = false;
+            this.c1Schedule1.ShowWorkTimeOnly = true;
             this.c1Schedule1.Size = new System.Drawing.Size(938, 249);
             this.c1Schedule1.TabIndex = 10;
             this.c1Schedule1.ViewType = C1.Win.C1Schedule.ScheduleViewEnum.TimeLineView;

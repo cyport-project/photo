@@ -245,12 +245,13 @@ namespace 写真館システム
             // 
             // pictureBox1
             // 
-            this.tableLayoutPanel2.SetColumnSpan(this.pictureBox1, 14);
+            this.tableLayoutPanel2.SetColumnSpan(this.pictureBox1, 15);
             this.pictureBox1.Image = global::写真館システム.Properties.Resources.photokunlogo;
             this.pictureBox1.Location = new System.Drawing.Point(309, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.tableLayoutPanel2.SetRowSpan(this.pictureBox1, 9);
-            this.pictureBox1.Size = new System.Drawing.Size(470, 150);
+            this.pictureBox1.Size = new System.Drawing.Size(480, 156);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 

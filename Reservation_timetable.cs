@@ -520,7 +520,7 @@ namespace 写真館システム
             printSchedule = this.c1Schedule1;
 
             printSchedule.CalendarInfo.TimeInterval = C1.C1Schedule.TimeScaleEnum.ThirtyMinutes;
-            printSchedule.Size = new System.Drawing.Size(1300, 500);
+            printSchedule.Size = new System.Drawing.Size(2600, 500);
 
             //コントロールの外観を描画するBitmapの作成
             Bitmap bmp = new Bitmap(printSchedule.Width, printSchedule.Height);
